@@ -5,9 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")] //meaning GET method localhost:5001/api/users 
-    public class UsersController : ControllerBase
+    // [ApiController]
+    // [Route("api/[controller]")] 
+    //meaning GET method localhost:5001/api/users 
+
+    // change ControllerBase to BaseApiController
+    // so we can delete above lines in this controller (using inheritance)
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
         public UsersController(DataContext context)
